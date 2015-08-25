@@ -1,0 +1,23 @@
+md-dialog(aria-label="Class Details")
+	md-toolbar
+		.md-toolbar-tools
+			h2 Class Details
+			span(flex)
+			md-button.md-icon-button(ng-click='cancel()')
+				md-icon(aria-label='Close Dialog' md-font-icon='material-icons') close
+	md-dialog-content
+		form(name='form' ng-submit='save()')
+			p {{ class.title }}
+			md-input-container
+				label Title
+				input(ng-model='class.title')
+			md-input-container
+				label Duration
+				input(type='number' ng-model='class.duration')
+			md-input-container
+				label Cost
+				input(type='number' ng-model='class.cost')
+			input.md-button(type='submit' value='Save')
+	//- md-actions(layout="row")
+	//- 	md-button(ng-click='save()') Save
+	//- 	md-button(ng-click='cancel()') Cancel
