@@ -2,9 +2,9 @@
 
 angular.module 'v4App'
 .controller 'ClientDetailCtrl', ['$scope', '$stateParams', '$meteor', ($scope, $stateParams, $meteor) ->
-  $scope.client = $meteor.object Clients, $stateParams.clientId
+  $scope.client = $meteor.object Meteor.users, $stateParams.clientId
   $meteor.subscribe('clients')
-  
+
   $scope.save = () ->
     if $scope.form.$valid
       $scope.client.save().then(
@@ -13,7 +13,7 @@ angular.module 'v4App'
         (error) ->
           console.log 'save error ', error
       )
-        
+
   $scope.reset = () ->
     $scope.client.reset()
 ]
