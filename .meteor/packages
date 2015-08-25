@@ -15,3 +15,12 @@ angular:angular-material
 mquandalle:bower
 accounts-password
 accounts-ui
+email
+alanning:roles
+meteortoys:allthings
+dburles:collection-helpers
+reywood:publish-composite
+planettraining:jquery-fullcalendar
+angularui:ui-calendar
+momentjs:moment
+angular:angular-animate
