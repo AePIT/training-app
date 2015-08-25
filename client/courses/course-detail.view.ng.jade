@@ -1,0 +1,40 @@
+.course-detail(layout='row')
+  span(flex='')
+  div(layout='column')
+    h1 Here are the details of the course
+    form.md-whiteframe-z1(name='form', ng-submit='save()', layout-padding='')
+      md-input-container
+        label Name
+        input(ng-model='course.name', placeholder='Name')
+      md-input-container
+        label Category
+        input(ng-model='course.category', placeholder='Category')
+      md-input-container
+        label Department
+        input(ng-model='course.department', placeholder='Department')
+      md-input-container
+        label Max Students
+        input(ng-model='course.maxStudents', placeholder='Max Students' type='number')
+      md-input-container
+        md-checkbox(ng-model='course.available' aria-label='Available?') Available?
+      div(layout='column')
+        md-toolbar
+          .md-toolbar-tools
+            span {{course.classes.length}} Classes
+            span(flex)
+            md-button.md-icon-button(aria-label='comment' ng-click='addClass()')
+              md-icon(md-font-icon="material-icons") add
+        md-content
+          md-list
+            md-subheader.md-no-sticky Classes students need to take for this course
+            md-list-item.md-3-line(ng-repeat='class in course.classes' ng-click='showClass(class, $event)')
+              .md-list-item-text(layout='column')
+                h3 {{class.title}}
+                h4 Duration: {{class.duration}} hrs
+                p Cost: R {{class.cost}}
+              md-icon.md-fab.md-secondary(ng-click='removeClass(class)',md-font-icon="material-icons") delete
+      div(layout='row')
+        input.md-button(type='submit', value='Save')
+        md-button(ng-click='reset()') Reset
+        md-button(ng-href='/courses') Cancel
+  span(flex='')
