@@ -3,9 +3,23 @@
   div(layout='column')
     h1 Here are the details of the client
     form.md-whiteframe-z1(name='form', ng-submit='save()', layout-padding='')
-      md-input-container
+      md-input-container(flex='50')
         label Name
-        input(ng-model='client.name', placeholder='Name')
+        input(ng-model='client.profile.name', placeholder='Name')
+      div(layout='column')
+        md-input-container(flex='50')
+          label Contact Person
+          input(ng-model='client.profile.contactPerson')     
+        md-input-container(flex='50')
+          label Phone
+          input(ng-model='client.profile.phone')
+      div(layout='column')
+        md-input-container(flex='50')
+          label Email
+          input(ng-model='client.emails[0].address')
+      div(layout='row')
+        h3 Students
+      md-input
       div(layout='row')
         input.md-button(type='submit', value='Save')
         md-button(ng-click='reset()') Reset
