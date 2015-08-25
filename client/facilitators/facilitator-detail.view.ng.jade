@@ -1,0 +1,30 @@
+.facilitator-detail(layout='row')
+  span(flex='')
+  div(layout='column')
+    h1 Here are the details of the facilitator
+    form.md-whiteframe-z1(name='form', ng-submit='save()', layout-padding='')
+      div(layout='row')
+        md-input-container(flex='50')
+          label Name
+          input(ng-model='facilitator.profile.name', placeholder='Name')
+        md-input-container(flex='50')
+          label Username
+          input(ng-model='facilitator.username' placeholder='Username')
+      div(layout='row')
+        md-input-container(flex='50')
+          label Email
+          input(ng-model='facilitator.emails[0].address' placeholder='Email' type='email')
+        md-input-container(flex='50')
+          label Phone
+          input(ng-model='facilitator.profile.phone' placeholder='Phone')
+      md-input-container
+        label ID Number
+        input(ng-model='facilitator.profile.ID' placeholder='ID Number' type='number')
+      md-input-container
+        label Department
+        input(ng-model='facilitator.profile.department' placeholder='Department') 
+      div(layout='row')
+        input.md-button(type='submit', value='Save')
+        md-button(ng-click='reset()') Reset
+        md-button(ng-href='/facilitators') Cancel
+  span(flex='')
