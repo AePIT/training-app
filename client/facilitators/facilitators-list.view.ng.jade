@@ -1,0 +1,39 @@
+.facilitators-list(layout='row')
+  span(flex='')
+  div(layout='column')
+    h1 Facilitators
+    form.md-whiteframe-z1(ng-submit='save()', name='form', novalidate='', layout-padding='')
+      p Add a facilitator
+      div(layout='row')
+        md-input-container(flex='50')
+          label Name
+          input(ng-model='newFacilitator.profile.name', placeholder='Name')
+        md-input-container(flex='50')
+          label Username
+          input(ng-model='newFacilitator.username' placeholder='Username')
+      div(layout='row')
+        md-input-container(flex='50')
+          label Email
+          input(ng-model='newFacilitator.email' placeholder='Email' type='email')
+        md-input-container(flex='50')
+          label Phone
+          input(ng-model='newFacilitator.profile.phone' placeholder='Phone')
+      md-input-container
+        label Password
+        input(ng-model='newFacilitator.password' placeholder='Password')
+      md-input-container
+        label ID Number
+        input(ng-model='newFacilitator.profile.ID' placeholder='ID Number' type='number')
+      md-input-container
+        label Department
+        input(ng-model='newFacilitator.profile.department' placeholder='Department')    
+      input.md-button(type='submit', value='Add')
+    
+    ul
+      li(ng-repeat='facilitator in facilitators')
+        p 
+          a(href='/facilitators/{{facilitator._id}}') {{facilitator.profile.name}}
+          button(ng-click='remove(facilitator)') &times;
+
+    p Total number of facilitators: {{facilitators.length}}
+  span(flex='')
