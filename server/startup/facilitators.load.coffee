@@ -1,7 +1,6 @@
 Meteor.startup ->
   facilitators = [
     {
-    username: 'rozelle'
     email: 'rozelle@aepaud.co.za'
     password: 'lombard'
     profile:
