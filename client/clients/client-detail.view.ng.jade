@@ -22,16 +22,16 @@
           .md-toolbar-tools
             span {{client.students().length}} Students
             span(flex)
-            md-button.md-icon-button(aria-label='Add Student' ng-click='addStudent()')
+            md-button.md-icon-button(aria-label='Add Student' ng-click='addStudent($event)')
               md-icon(md-font-icon='material-icons') add
         md-content
           md-list
-            md-subheader.md-no-sticky Students belonging to this client
-            md-list-item.md-3-line(ng-repeat='student in client.students()' ng-click='showStudent(student, $event)')
+            md-subheader.md-no-sticky Students belonging to this client {{ students.count }}
+            md-list-item.md-3-line(ng-repeat='student in students' ng-click='showStudent(student._id, $event)')
               .md-list-item-text(layout='column')
                 h3 {{student.profile.name}}
-                h4 {{student.profile.ID}}
-                p {{student.profile.phone}}
+                h4 ID: {{student.profile.ID}}
+                p Email: {{student.emails[0].address}}
               md-icon.md-fab.md-secondary(ng-click='removeStudent(student)' md-font-icon='material-icons') delete
       //- md-input
       div(layout='row')
