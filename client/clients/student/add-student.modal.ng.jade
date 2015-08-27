@@ -1,0 +1,29 @@
+md-dialog(aria-label='Add Student')
+  md-toolbar
+    .md-toolbar-tools
+      h2 Enter new student's details
+      span(flex)
+      md-button.md-icon-button(ng-click='cancel()')
+        md-icon(aria-label='Close Dialog' md-font-icon='material-icons') close
+  md-dialog-content
+    form(name='form' ng-submit='save()')
+      div(layout='row')
+        md-input-container(flex='50')
+          label Name
+          input(ng-model='newStudent.profile.name')
+        md-input-container(flex='50')
+          label Email
+          input(ng-model='newStudent.email' type='email')
+      md-input-container
+        label Password
+        input(ng-model='newStudent.password' type='password')
+      md-input-container
+        label Phone
+        input(ng-model='newStudent.profile.phone')
+      md-input-container
+        label ID Number
+        input(ng-model='newStudent.profile.ID')
+      md-actions(layout="row")
+        span(flex)
+        input.md-button(type='submit' value='Save')
+        md-button(ng-click='cancel()') Cancel

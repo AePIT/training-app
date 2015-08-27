@@ -1,0 +1,33 @@
+.clients-list(layout='row')
+  span(flex='')
+  div(layout='column')
+    h1 Clients
+    form.md-whiteframe-z1(ng-submit='save()', name='form', novalidate='', layout-padding='')
+      p Add a client
+      md-input-container
+        label Name
+        input(ng-model='newClient.profile.name', placeholder='Name')
+      div(layout='column')
+        md-input-container(flex='50')
+          label Email
+          input(ng-model='newClient.email' type='email')
+        md-input-container(flex='50')
+          label Password
+          input(ng-model='newClient.password' type='password')
+      div(layout='column')
+        md-input-container(flex='50')
+          label Contact Person
+          input(ng-model='newClient.profile.contactPerson')
+        md-input-container(flex='50')
+          label Phone
+          input(ng-model='newClient.profile.phone')
+      input.md-button(type='submit', value='Add')
+    
+    ul
+      li(ng-repeat='client in clients')
+        p 
+          a(href='/clients/{{client._id}}') {{client.profile.name}}
+          button(ng-click='remove(client)') &times;
+
+    p Total number of clients: {{clients.length}}
+  span(flex='')

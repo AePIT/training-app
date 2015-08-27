@@ -1,0 +1,41 @@
+.client-detail(layout='row')
+  span(flex='')
+  div(layout='column')
+    h1 Here are the details of the client
+    form.md-whiteframe-z1(name='form', ng-submit='save()', layout-padding='')
+      md-input-container(flex='50' required)
+        label Name
+        input(ng-model='client.profile.name', placeholder='Name')
+      div(layout='column')
+        md-input-container(flex='50')
+          label Contact Person
+          input(ng-model='client.profile.contactPerson')     
+        md-input-container(flex='50')
+          label Phone
+          input(ng-model='client.profile.phone')
+      div(layout='column')
+        md-input-container(flex='50')
+          label Email
+          input(ng-model='client.emails[0].address')
+      div(layout='column')
+        md-toolbar
+          .md-toolbar-tools
+            span {{client.students().length}} Students
+            span(flex)
+            md-button.md-icon-button(aria-label='Add Student' ng-click='addStudent($event)')
+              md-icon(md-font-icon='material-icons') add
+        md-content
+          md-list
+            md-subheader.md-no-sticky Students belonging to this client {{ students.count }}
+            md-list-item.md-3-line(ng-repeat='student in students' ng-click='showStudent(student._id, $event)')
+              .md-list-item-text(layout='column')
+                h3 {{student.profile.name}}
+                h4 ID: {{student.profile.ID}}
+                p Email: {{student.emails[0].address}}
+              md-icon.md-fab.md-secondary(ng-click='removeStudent(student)' md-font-icon='material-icons') delete
+      //- md-input
+      div(layout='row')
+        input.md-button(type='submit', value='Save')
+        md-button(ng-click='reset()') Reset
+        md-button(ng-href='/clients') Cancel
+  span(flex='')

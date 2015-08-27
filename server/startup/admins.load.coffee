@@ -1,7 +1,6 @@
 Meteor.startup ->
 	users = [
 	    {
-	      username: 'alpha'
 	      email: 'alpha@aepit.co.za'
 	      password: 'tawanda'
 	      profile:
