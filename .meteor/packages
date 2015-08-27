@@ -24,3 +24,6 @@ planettraining:jquery-fullcalendar
 angularui:ui-calendar
 momentjs:moment
 angular:angular-animate
+sanjo:jasmine
+velocity:html-reporter
+velocity:helpers
