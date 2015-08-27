@@ -20,19 +20,18 @@ angular.module 'v4App'
     if $scope.course.classes is undefined then $scope.course.classes=[]
     $scope.course.classes.push { title: '', duration: 0, cost: 0 }
 
-  $scope.showClass = (c, ev) ->
+  $scope.showClass = (c, event) ->
     i = $scope.course.classes.indexOf c
     success = (c) ->
       $scope.course.classes[i] = c
     fail = ->
-    $mdDialog.show({
+    $mdDialog.show
       locals: {c: c}
-      controller: 'ClassModalController',
-      templateUrl: 'client/courses/class-modal.view.html',
-      parent: angular.element(document.body),
-      targetEvent: ev,
+      controller: 'ClassModalController'
+      templateUrl: 'client/courses/class-modal.view.html'
+      parent: angular.element(document.body)
+      targetEvent: event
       clickOutsideToClose:true
-    })
     .then success, fail
 
   $scope.removeClass = (c) ->
