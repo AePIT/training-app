@@ -8,6 +8,6 @@ Meteor.users.allow
 
 Meteor.users.helpers
   students: ->
-    if Roles.userIsInRole(@_id, 'clients')
-      if @studentIds is undefined then @studentIds = []
-      _.map studentIds, (id) -> Meteor.users.findOne id
+    # if Roles.userIsInRole(@_id, 'client')
+    if @profile.studentIds is undefined then @profile.studentIds = []
+    _.map @profile.studentIds, (id) -> Meteor.users.findOne id
