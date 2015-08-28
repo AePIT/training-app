@@ -1,0 +1,19 @@
+.bookings-list(layout='row')
+  span(flex='')
+  div(layout='column')
+    h1 Bookings
+    form.md-whiteframe-z1(ng-submit='save()', name='form', novalidate='', layout-padding='')
+      p Add a booking
+      md-input-container
+        label Name
+        input(ng-model='newBooking.name', placeholder='Name')
+      input.md-button(type='submit', value='Add')
+    
+    ul
+      li(ng-repeat='booking in bookings')
+        p 
+          a(href='/bookings/{{booking._id}}') {{booking.name}}
+          button(ng-click='remove(booking)') &times;
+
+    p Total number of bookings: {{bookings.length}}
+  span(flex='')
