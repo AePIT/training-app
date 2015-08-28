@@ -38,14 +38,11 @@ describe("User Helpers", function() {
           email: 'user@user.com',
           password: 'user'
         };
-
-      var role = 'tester'
-
-      console.log(VelocityHelpers.spyOnMethod('addUser'));
-
-      console.log(result);
-
-      expect(result).not.toBeDefined();
+        
+      Meteor.call('addUser', user, 'tester', function(result){
+        console.log(result);
+        expect(result).toBeDefined();
+      });
     });
   });
 });
