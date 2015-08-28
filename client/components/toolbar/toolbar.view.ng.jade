@@ -1,8 +1,9 @@
 md-toolbar.toolbar(layout='row', layout-align='start center', layout-padding='')
   .navbar-left(layout='row', layout-align='center center')
-    meteor-include(src='loginButtons')
     md-button(ng-href='/courses') Courses
     md-button(ng-href='/facilitators') Facilitators
     md-button(ng-href='/clients') Clients
+    md-button(ng-href='/bookings') Bookings
   span(flex='')
-  .navbar-right 
+  .navbar-right
+    meteor-include(src='loginButtons')
