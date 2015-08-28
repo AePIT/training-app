@@ -8,11 +8,11 @@
         label Name
         input(ng-model='newThing.name', placeholder='Name')
       input.md-button(type='submit', value='Add')
-    
+
     ul
       li(ng-repeat='thing in things')
         p {{thing.name}}
-          button(ng-click='remove(thing)') &times;
+          button(ng-click='thing.speak()') &times;
 
     p Total number of things: {{things.length}}
   span(flex='')

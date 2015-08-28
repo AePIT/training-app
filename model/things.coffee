@@ -1,4 +1,8 @@
-@Things = new Mongo.Collection('things')
+@Things = new Mongo.Collection('things', {
+  transform: (thing) ->
+    thing.speak = -> console.log 'the thing speaks!'
+    thing
+  })
 
 Things.allow
   insert: (userId, thing) ->
