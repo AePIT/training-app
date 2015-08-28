@@ -5,10 +5,10 @@
 @addUser = ( userObject, roles ) ->
   user = userexists userObject
   if user is undefined then user = Accounts.createUser userObject
-  Roles.addUsersToRoles user._id, roles
+  Roles.addUsersToRoles user,  roles
   return user._id
 
 #removes a user from the specified role/roles.
 @removeUser = ( user, roles ) ->
-  Roles.RemoveUsersFromRoles user._id, roles
+  Roles.RemoveUsersFromRoles user, roles
   return user._id
