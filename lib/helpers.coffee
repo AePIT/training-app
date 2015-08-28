@@ -4,7 +4,7 @@
 # creates a new user, and adds them to role/roles specified. if user already exists, they are simply added to the specified role instead
 @addUser = ( user, roles ) ->
   exists = userexists user
-  if exists is undefined then id = Accounts.createUser userObject
+  if exists is undefined then id = Accounts.createUser user
   else id = exists._id
   Roles.addUsersToRoles id,  roles
   return id
