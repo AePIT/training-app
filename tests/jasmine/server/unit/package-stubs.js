@@ -7085,7 +7085,7 @@ var packageMetadata = {
                 },
                 "version": {
                   "type": "constant",
-                  "value": "1186caf7922ee238245f87bd9b07c089d33387e3"
+                  "value": "fdeb61db37655291491546724ef7e449b0dcdf1b"
                 },
                 "PUBLIC_SETTINGS": {
                   "type": "undefined"
@@ -7209,7 +7209,7 @@ var packageMetadata = {
             },
             "connections": {
               "type": "constant",
-              "value": 1
+              "value": 3
             },
             "timeout": {
               "type": "constant",
@@ -7866,11 +7866,11 @@ var packageMetadata = {
       "members": {
         "autoupdateVersion": {
           "type": "constant",
-          "value": "1e024ecce1797e91343e733c1ee1e8f0fdb96af7"
+          "value": "ddcba2bd58f63f01cf32f5ce3539167d8670453b"
         },
         "autoupdateVersionRefreshable": {
           "type": "constant",
-          "value": "1c7e692ad3d29428eced4c0d7337fe73d42853e8"
+          "value": "c3bbcfcce0df599fa94630cb1b84771bb6e511b4"
         },
         "autoupdateVersionCordova": {
           "type": "constant",
@@ -10512,7 +10512,127 @@ var packageMetadata = {
       "type": "object",
       "members": {
         "karmaChilds": {
-          "type": "object"
+          "type": "object",
+          "members": {
+            "jasmine-client-unit": {
+              "type": "object",
+              "members": {
+                "taskName": {
+                  "type": "constant",
+                  "value": "jasmine-client-unit"
+                },
+                "appPath": {
+                  "type": "constant",
+                  "value": "/home/alpha/Desktop/aep/training-app"
+                },
+                "pid": {
+                  "type": "constant",
+                  "value": 20019
+                },
+                "fout": {
+                  "type": "constant",
+                  "value": 72
+                },
+                "child": {
+                  "type": "object",
+                  "members": {
+                    "domain": {
+                      "type": "null",
+                      "value": null
+                    },
+                    "signalCode": {
+                      "type": "null",
+                      "value": null
+                    },
+                    "exitCode": {
+                      "type": "null",
+                      "value": null
+                    },
+                    "pid": {
+                      "type": "constant",
+                      "value": 20019
+                    },
+                    "stdin": {
+                      "type": "null",
+                      "value": null
+                    },
+                    "stdout": {
+                      "type": "null",
+                      "value": null
+                    },
+                    "stderr": {
+                      "type": "null",
+                      "value": null
+                    },
+                    "stdio": {
+                      "type": "array"
+                    },
+                    "spawn": {
+                      "type": "function"
+                    },
+                    "kill": {
+                      "type": "function"
+                    },
+                    "ref": {
+                      "type": "function"
+                    },
+                    "unref": {
+                      "type": "function"
+                    },
+                    "setMaxListeners": {
+                      "type": "function"
+                    },
+                    "emit": {
+                      "type": "function"
+                    },
+                    "addListener": {
+                      "type": "function",
+                      "refID": 17
+                    },
+                    "on": {
+                      "ref": 17
+                    },
+                    "once": {
+                      "type": "function"
+                    },
+                    "removeListener": {
+                      "type": "function"
+                    },
+                    "removeAllListeners": {
+                      "type": "function"
+                    },
+                    "listeners": {
+                      "type": "function"
+                    }
+                  }
+                },
+                "getTaskName": {
+                  "type": "function"
+                },
+                "getChild": {
+                  "type": "function"
+                },
+                "getPid": {
+                  "type": "function"
+                },
+                "isDead": {
+                  "type": "function"
+                },
+                "isRunning": {
+                  "type": "function"
+                },
+                "readPid": {
+                  "type": "function"
+                },
+                "spawn": {
+                  "type": "function"
+                },
+                "kill": {
+                  "type": "function"
+                }
+              }
+            }
+          }
         },
         "getKarmaChild": {
           "type": "function"
