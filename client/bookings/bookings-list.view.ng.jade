@@ -5,14 +5,30 @@
     form.md-whiteframe-z1(ng-submit='save()', name='form', novalidate='', layout-padding='')
       p Add a booking
       md-input-container
-        label Name
-        input(ng-model='newBooking.name', placeholder='Name')
-      input.md-button(type='submit', value='Add')
+        label Course
+        md-select(ng-model='newBooking.courseId'): md-option(ng-repeat='course in courses' value='{{course._id}}') {{course.name}}
+      div(layout='column')
+        md-toolbar
+          .md-toolbar-tools
+            span {{newBooking.clients().length}} Clients
+            span(flex)
+            md-button.md-icon-button(aria-label='Add Client' ng-click='addClient()')
+              md-icon(md-font-icon="material-icons") add
+        md-content
+          md-list
+            md-subheader.md-no-sticky Clients booked
+            md-list-item.md-3-line(ng-repeat='client in newBooking.clients()' ng-click='showClient(client, $event)')
+              .md-list-item-text(layout='column')
+                h3 {{client.profile.name}}
+                h4 {{client.profile.phone}}, {{client.emails[0].address}}
+                p {{client.profile.studentIds.length}}
+              md-icon.md-fab.md-secondary(ng-click='removeClient(client)',md-font-icon="material-icons") delete
+      input.md-button(type='submit')
     
     ul
       li(ng-repeat='booking in bookings')
         p 
-          a(href='/bookings/{{booking._id}}') {{booking.name}}
+          a(href='/bookings/{{booking._id}}') {{booking.course().name}}, {{booking.client}}, {{booking.date}}
           button(ng-click='remove(booking)') &times;
 
     p Total number of bookings: {{bookings.length}}
