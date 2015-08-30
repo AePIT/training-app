@@ -27,7 +27,7 @@ angular.module 'v4App'
     fail = ->
     $mdDialog.show
       locals: {c: c}
-      controller: 'ClassModalController'
+      controller: 'ClassModalCtrl'
       templateUrl: 'client/courses/class-modal.view.html'
       parent: angular.element(document.body)
       targetEvent: event
@@ -40,7 +40,7 @@ angular.module 'v4App'
   $scope.reset = () ->
     $scope.course.reset()
 ]
-.controller 'ClassModalController', ['$scope','c','$mdDialog', ($scope, c,$mdDialog) ->
+.controller 'ClassModalCtrl', ['$scope','c','$mdDialog', ($scope, c,$mdDialog) ->
   $scope["class"] = c
 
   $scope.cancel = -> $mdDialog.cancel()
