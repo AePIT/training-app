@@ -1,0 +1,17 @@
+md-dialog(aria-label='Book client')
+  md-toolbar
+    .md-toolbar-tools
+      h2 Select clients to book
+      span(flex)
+      md-button.md-icon-button(ng-click='cancel()')
+        md-icon(aria-label='Close Dialog' md-font-icon='material-icons') close
+  md-dialog-content(layout='column')
+    md-list(flex='50')
+      h3 Clients
+      md-input-container
+        label Search
+        input(ng-model='searchText')
+      md-list-item.md-2-line.client(ng-repeat='client in searchClients' ng-click='toggle(client)' ng-class='{selected: selected(client)}')
+        .md-list-item-text
+          h3 {{client.profile.name}}
+          p {{client.emails[0].address}}
